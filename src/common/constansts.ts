@@ -25,6 +25,7 @@ export const modalNames = {
   allFriends: "allFriends",
   editPost: "EDIT_POST",
   verificationRequest: "VERIFICATION_REQUEST",
+  verificationAction: "VERIFICATION_ACTION",
 };
 
 export const HEADER_HEIGHT = 116;

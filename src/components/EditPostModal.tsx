@@ -21,7 +21,7 @@ const EditPostModal: React.FC = () => {
     description: '',
   });
   const [error, setError] = useState<string>('');
-  const { mutateAsync: editPost, isLoading } = useEditPost();
+  const { execute: editPost, isLoading } = useEditPost();
 
   // Reset form when modal opens or closes
   useEffect(() => {
@@ -35,7 +35,7 @@ const EditPostModal: React.FC = () => {
   }, [activeModal, modalData]);
 
   const handleClose = () => {
-    dispatch(closeModalAction());
+    dispatch(closeModalAction(null));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,10 +60,11 @@ const EditPostModal: React.FC = () => {
 
   return (
     <ModalWrapper
-      isOpen={activeModal === modalName}
-      onClose={handleClose}
-      title="Edit Post"
+      modalContentRef={React.useRef(null)}
+      isModalOpen={activeModal === modalName}
+      closeModal={handleClose}
     >
+      <h2 className="text-xl font-bold mb-4">Edit Post</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="description" className="font-medium">

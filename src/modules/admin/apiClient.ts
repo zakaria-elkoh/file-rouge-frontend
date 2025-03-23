@@ -26,7 +26,7 @@ export const useArchiveUser = () => {
   const queryClient = useQueryClient();
   return useMutation(
     async (userId: string) => {
-      const res = await put(`/users/admin/archive/${userId}`);
+      const res = await put(`/users/admin/archive/${userId}`, {});
       return res.data;
     },
     {
@@ -41,7 +41,7 @@ export const useUnarchiveUser = () => {
   const queryClient = useQueryClient();
   return useMutation(
     async (userId: string) => {
-      const res = await put(`/users/admin/unarchive/${userId}`);
+      const res = await put(`/users/admin/unarchive/${userId}`, {});
       return res.data;
     },
     {
@@ -56,7 +56,7 @@ export const useMakeAdmin = () => {
   const queryClient = useQueryClient();
   return useMutation(
     async (userId: string) => {
-      const res = await put(`/users/admin/make-admin/${userId}`);
+      const res = await put(`/users/admin/make-admin/${userId}`, {});
       return res.data;
     },
     {
@@ -71,7 +71,7 @@ export const useRemoveAdmin = () => {
   const queryClient = useQueryClient();
   return useMutation(
     async (userId: string) => {
-      const res = await put(`/users/admin/remove-admin/${userId}`);
+      const res = await put(`/users/admin/remove-admin/${userId}`, {});
       return res.data;
     },
     {
@@ -97,7 +97,7 @@ export const useArchivePost = () => {
   const queryClient = useQueryClient();
   return useMutation(
     async (postId: string) => {
-      const res = await put(`/posts/admin/archive/${postId}`);
+      const res = await put(`/posts/admin/archive/${postId}`, {});
       return res.data;
     },
     {
@@ -112,7 +112,7 @@ export const useUnarchivePost = () => {
   const queryClient = useQueryClient();
   return useMutation(
     async (postId: string) => {
-      const res = await put(`/posts/admin/unarchive/${postId}`);
+      const res = await put(`/posts/admin/unarchive/${postId}`, {});
       return res.data;
     },
     {

@@ -17,7 +17,7 @@ const VerificationRequestButton: React.FC<VerificationRequestButtonProps> = ({
   isCurrentUser,
 }) => {
   const dispatch = useDispatch();
-  const { data: requests = [] } = useGetUserVerificationRequests();
+  const { data: _requests = [] } = useGetUserVerificationRequests();
   
   // Don't show the button if not the current user
   if (!isCurrentUser) return null;

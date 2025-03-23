@@ -44,6 +44,7 @@ const VerificationRequestModal: React.FC = () => {
   
   return (
     <ModalWrapper
+      modalContentRef={React.useRef(null)}
       isModalOpen={isOpen}
       closeModal={handleClose}
     >
@@ -69,7 +70,7 @@ const VerificationRequestModal: React.FC = () => {
             disabled={isLoading}
           />
           {error && <InputErrorMessage message={error} />}
-          {submitError && <InputErrorMessage message="Failed to submit request. Please try again." />}
+          {submitError ? <InputErrorMessage message="Failed to submit request. Please try again." /> : null}
         </div>
         
         <div className="flex justify-end gap-2">

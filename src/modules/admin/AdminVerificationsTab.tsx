@@ -51,6 +51,7 @@ const VerificationActionModal: React.FC<IVerificationActionModalProps> = ({
   
   return (
     <ModalWrapper
+      modalContentRef={React.useRef(null)}
       isModalOpen={isOpen}
       closeModal={onClose}
     >
