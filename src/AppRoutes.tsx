@@ -7,6 +7,7 @@ import SinglePostPage from "./pages/SinglePostPage";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import MainPage from "./pages/MainPage";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const AppRoutes = () => {
   return (
@@ -21,6 +22,10 @@ const AppRoutes = () => {
         element={<PrivateRoute element={<SinglePostPage />} />}
       />
       <Route path="/chat" element={<PrivateRoute element={<ChatPage />} />} />
+      <Route 
+        path="/admin" 
+        element={<PrivateRoute element={<AdminDashboard />} adminOnly={true} />} 
+      />
       <Route path="/home" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />

@@ -18,6 +18,7 @@ import { useUpdateUser, useUploadUserProfilePhoto } from "./apiClient";
 type FormType = {
   fullName: string;
   email: string;
+  jobTitle: string;
 };
 
 const EditProfileModal = () => {
@@ -71,12 +72,18 @@ const EditProfileModal = () => {
     defaultValues: {
       fullName: currentUser.fullName,
       email: currentUser.email,
+      jobTitle: currentUser.jobTitle || '',
     },
   });
 
   const onSubmit = useCallback(
     (data: FormType) => {
-      updateUser.execute(data);
+      const updateData = {
+        fullName: data.fullName,
+        email: data.email,
+        ...(data.jobTitle ? { jobTitle: data.jobTitle } : { jobTitle: '' }),
+      };
+      updateUser.execute(updateData);
       if (!photo) return;
       const formData = new FormData();
       formData.append("photo", photo);
@@ -143,6 +150,14 @@ const EditProfileModal = () => {
             error={errors.email?.message}
             className="!bg-primary text-black"
             placeholder="Email..."
+          />
+          <Input
+            {...register("jobTitle", {
+              maxLength: 50,
+            })}
+            error={errors.jobTitle?.message}
+            className="!bg-primary text-black"
+            placeholder="Job Title (optional)..."
           />
           {updateUser.error && (
             <InputErrorMessage message={getErrorMessage(updateUser.error)} />

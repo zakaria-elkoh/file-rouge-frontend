@@ -8,6 +8,7 @@ interface IPost {
   description?: string;
   likes: IUser[];
   photo: boolean;
+  archived?: boolean;
 }
 
 export default IPost;

@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 export const SERVER_URL =
-  import.meta.env.API_URL ?? "https://file-rouge-backend-fyewanhgehfzhugk.spaincentral-01.azurewebsites.net/";
+  import.meta.env.API_URL ?? "http://localhost:4000";
 
 export const BASE_API_URL = `${SERVER_URL}/api`;
 

@@ -5,12 +5,13 @@ import HeaderChatIcon from "../../modules/chat/HeaderChatIcon";
 import HeaderNotificationIcon from "../../modules/notifications/HeaderNotificationIcon";
 import { useCallback, useState } from "react";
 import { AiFillHome, AiOutlineLogout } from "react-icons/ai";
-import { FaBars, FaUser } from "react-icons/fa";
+import { FaBars, FaUser, FaUserShield } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   getCurrentUserId,
   isLoggedInSelector,
+  getCurrentUser,
 } from "../../store/selectors/appSelectors";
 
 const MobileNavigation = () => {
@@ -42,6 +43,7 @@ export default MobileNavigation;
 const DropdownContent = ({ closeDropdown }: { closeDropdown: () => void }) => {
   const currentUserId = useSelector(getCurrentUserId);
   const isAuthenticated = useSelector(isLoggedInSelector);
+  const currentUser = useSelector(getCurrentUser);
   const logoutHandler = useLogout();
 
   return (
@@ -70,6 +72,14 @@ const DropdownContent = ({ closeDropdown }: { closeDropdown: () => void }) => {
                 <p>Profile</p>
               </Link>
             </li>
+            {currentUser?.isAdmin && (
+              <li className="w-full px-2" onClick={closeDropdown}>
+                <Link to="/admin" className="flex items-center gap-2">
+                  <FaUserShield className="w-6 h-6" />
+                  <p>Admin Dashboard</p>
+                </Link>
+              </li>
+            )}
             {/* <li className="w-full px-2">
               <Link to="/games" className="flex items-center gap-2">
                 <GamepadIcon color="white" className="w-6 h-6" />

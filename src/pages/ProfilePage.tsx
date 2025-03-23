@@ -13,6 +13,7 @@ import { useParams } from "react-router";
 import { userImageUrl } from "../services/api";
 import { getCurrentUserId } from "../store/selectors/appSelectors";
 import { openModalAction } from "../store/ui/uiSlice";
+import VerificationComponents from "../components/ProfileComponents/VerificationComponents";
 
 function ProfilePage() {
   const { userId } = useParams<{ userId: string }>();
@@ -53,10 +54,17 @@ function ProfilePage() {
             ) : (
               <div className="flex gap-2 sm:gap-5 flex-wrap">
                 <h3 className="text-3xl font-bold">{user?.fullName}</h3>
+                {user?.jobTitle && (
+                  <p className="text-gray-600 text-lg">{user.jobTitle}</p>
+                )}
                 <div className="flex gap-4">
                   <ProfilePageUserActions userId={userId!} />
                 </div>
               </div>
+            )}
+
+            {!userLoading && user && (
+              <VerificationComponents user={user} />
             )}
 
             <div className="flex gap-6">

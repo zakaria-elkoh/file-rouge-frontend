@@ -23,6 +23,8 @@ export const queryKeys = {
 export const modalNames = {
   editProfile: "editProfile",
   allFriends: "allFriends",
+  editPost: "EDIT_POST",
+  verificationRequest: "VERIFICATION_REQUEST",
 };
 
 export const HEADER_HEIGHT = 116;
