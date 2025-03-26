@@ -48,8 +48,29 @@ const VerificationRequestModal: React.FC = () => {
       isModalOpen={isOpen}
       closeModal={handleClose}
     >
-      <div className="bg-white rounded-lg p-6 w-full max-w-md">
-        <h2 className="text-xl font-bold mb-2">Request Account Verification</h2>
+      <div className="bg-white rounded-lg p-6 w-full max-w-md relative">
+        <button 
+          onClick={handleClose}
+          className="absolute top-2 right-2 text-red-500 hover:text-red-700 transition-colors"
+          title="Close"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="h-6 w-6" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path 
+              strokeLinecap="round" 
+              // strokeLinecap="round" 
+              strokeWidth={2} 
+              d="M6 18L18 6M6 6l12 12" 
+            />
+          </svg>
+        </button>
+        
+        <h2 className="text-xl font-bold mb-2 text-black">Request Account Verification</h2>
         <p className="text-gray-600 mb-4">
           Please explain why your account should be verified. Our admin team will review your request.
         </p>
@@ -65,7 +86,7 @@ const VerificationRequestModal: React.FC = () => {
               if (error) setError('');
             }}
             placeholder="Explain why your account should be verified..."
-            className="w-full p-2 border border-gray-300 rounded-md"
+            className="w-full p-2 text-black/80 border border-gray-300 rounded-md"
             rows={5}
             disabled={isLoading}
           />
