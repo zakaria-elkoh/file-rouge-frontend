@@ -23,7 +23,7 @@ const DesktopNavigation = () => {
   return (
     <>
       {isAuthenticated ? (
-        <>
+        <div className="flex gap-3">
           <Link to="/">
             <AiFillHome className={classes.icon} />
           </Link>
@@ -37,10 +37,10 @@ const DesktopNavigation = () => {
               <FaUserShield className={classes.icon} />
             </Link>
           )}
-          <button onClick={logoutHandler}>
+          <button title="log out" onClick={logoutHandler}>
             <AiOutlineLogout className={classes.icon} />
           </button>
-        </>
+        </div>
       ) : (
         <>
           <Link to="/home">
