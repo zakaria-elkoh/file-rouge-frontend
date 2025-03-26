@@ -20,7 +20,7 @@ const Header = () => {
                 to={isLoggedIn ? "/" : "/home"}
                 className="text-xl font-bold hidden sm:block"
               >
-                LawConn
+                LawConny
               </Link>
             </div>
             {isLoggedIn && <SearchUsers />}
