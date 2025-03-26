@@ -54,12 +54,12 @@ function ProfilePage() {
             ) : (
               <div className="flex gap-2 sm:gap-5 flex-wrap">
                 <h3 className="text-3xl font-bold">{user?.fullName}</h3>
-                {user?.jobTitle && (
-                  <p className="text-gray-600 text-lg">{user.jobTitle}</p>
-                )}
                 <div className="flex gap-4">
                   <ProfilePageUserActions userId={userId!} />
                 </div>
+                {user?.jobTitle && (
+                  <p className="text-gray-600 w-full text-lg">{user.jobTitle}</p>
+                )}
               </div>
             )}
 

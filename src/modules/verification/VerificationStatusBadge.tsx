@@ -13,7 +13,7 @@ const VerificationStatusBadge: React.FC<VerificationStatusBadgeProps> = ({ user,
   const getStatusIcon = () => {
     switch (user.verificationStatus) {
       case 'verified':
-        return <FaCheck className="text-green-500" />;
+        return <FaCheck className="text-blue-500" />;
       case 'pending':
         return <FaClock className="text-yellow-500" />;
       case 'rejected':
@@ -39,7 +39,7 @@ const VerificationStatusBadge: React.FC<VerificationStatusBadgeProps> = ({ user,
   const getStatusColorClass = () => {
     switch (user.verificationStatus) {
       case 'verified':
-        return 'bg-green-100 hover:bg-green-200';
+        return 'bg-blue-100 hover:bg-blue-200';
       case 'pending':
         return 'bg-yellow-100 hover:bg-yellow-200';
       case 'rejected':
