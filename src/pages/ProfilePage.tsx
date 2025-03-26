@@ -100,6 +100,7 @@ function ProfilePage() {
         />
       </div>
       <EditProfileModal />
+      <div></div>
     </>
   );
 }
