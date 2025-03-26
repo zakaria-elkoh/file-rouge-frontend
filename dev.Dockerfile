@@ -10,5 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-# Make sure the dev script has the correct host setting
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
