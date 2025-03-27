@@ -14,7 +14,7 @@ const HomePage = () => {
               className="text-[64px] font-semibold leading-[70px] fadeIn"
               style={{ animationDelay: ".4s" }}
             >
-              GLBook
+              LawConny
             </h1>
             <h4
               className="text-[24px] font-light fadeIn mb-5"
@@ -46,9 +46,9 @@ const HomePage = () => {
           </div>
           <div>
             <img
-              src="/hand.webp"
+              src="/connect-bg.png"
               alt="landing"
-              className="fadeIn"
+              className="fadeIn h-[600px]"
               style={{ animationDelay: ".2s" }}
             />
           </div>

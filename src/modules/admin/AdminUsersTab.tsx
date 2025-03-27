@@ -166,7 +166,7 @@ const AdminUsersTab: React.FC = () => {
                           className="!p-2"
                           color="danger"
                         >
-                          <FaUserMinus />
+                          <FaUserMinus /> 
                         </Button>
                       ) : (
                         <Button

@@ -109,7 +109,7 @@ const SinglePostPanel = () => {
             </div> */}
           </div>
         </div>
-        <ul className="flex-grow px-4 py-2  flex flex-col gap-5 overflow-auto">
+        <ul className="flex px-4 flex flex-col gap-1 overflow-auto">
           {comments.map((comment) => {
             return (
               <CommentListItem

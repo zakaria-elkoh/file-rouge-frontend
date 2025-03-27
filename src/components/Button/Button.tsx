@@ -30,6 +30,7 @@ const outlineSecondary = "border border-secondary";
 
 const Button: React.FC<ButtonPropTypes> = ({
   children,
+  title,
   onClick,
   color = "primary",
   className,
@@ -41,6 +42,7 @@ const Button: React.FC<ButtonPropTypes> = ({
     <Tippy content={tooltip} disabled={!tooltip}>
       <button
         type={type}
+        title={title}
         onClick={() => {
           if (disabled) return;
           if (!onClick) return;

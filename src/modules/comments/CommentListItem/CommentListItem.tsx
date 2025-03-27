@@ -23,7 +23,7 @@ const CommentListItem = ({
   const isCommentAuthor = user?._id === currentUser?._id;
 
   return (
-    <li className="p-1 flex justify-between items-center gap-2">
+    <li className="p-1 pt-3 flex bg-gray-100 justify-between items-center gap-2">
       <div className="flex gap-4 flex-grow">
         <img
           className="rounded-md w-10 h-10 flex-shrink-0"
